@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { EmployeeService } from "../employee.service";
 
 @Component({
-  selector: 'app-employee-list',
-  templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.scss']
+  selector: "app-employee-list",
+  templateUrl: "./employee-list.component.html",
+  styleUrls: ["./employee-list.component.scss"]
 })
 export class EmployeeListComponent implements OnInit {
+  Employees: any = [];
 
-  constructor() { }
+  constructor(public api: EmployeeService) {}
 
   ngOnInit() {
+    this.loadEmployees();
   }
 
+  loadEmployees() {
+    return this.api.getEmployees().subscribe((data: {}) => {
+      this.Employees = data;
+    });
+  }
 }

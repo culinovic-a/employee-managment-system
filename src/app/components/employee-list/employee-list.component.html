@@ -1,1 +1,27 @@
-<p>employee-list works!</p>
+<nz-table #basicTable [nzData]="Employees">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Phone Number</th>
+      <th>Skills</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of Employees">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.date }}</td>
+      <td>{{ employee.number }}</td>
+      <td>{{ employee.skills }}</td>
+      <td>
+        <a><i nz-icon nzType="edit" nzTheme="outline"></i></a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a><i nz-icon nzType="delete" nzTheme="outline"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
