@@ -43,13 +43,27 @@ export class EmployeeService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  // updateEmployee(id, employee): Observable<Employee> {
+  //   return this.http
+  //     .put<Employee>(
+  //       this.api + "/employees/" + id,
+  //       JSON.stringify(employee),
+  //       this.httpOptions
+  //     )
+  //     .pipe(retry(1), catchError(this.handleError));
+  // }
+
+  deleteEmployee(id) {
+    return this.http
+      .delete<Employee>(this.api + "/employees/" + id, this.httpOptions)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+
   handleError(error) {
     let errorMessage = "";
     if (error.error instanceof ErrorEvent) {
-      // Get client-side error
       errorMessage = error.error.message;
     } else {
-      // Get server-side error
       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
     window.alert(errorMessage);

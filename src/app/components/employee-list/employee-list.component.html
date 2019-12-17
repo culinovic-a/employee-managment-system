@@ -13,14 +13,28 @@
     <tr *ngFor="let employee of Employees">
       <td>{{ employee.name }}</td>
       <td>{{ employee.email }}</td>
-      <td>{{ employee.date }}</td>
+      <td>{{ employee.date | date: "mediumDate" }}</td>
       <td>{{ employee.number }}</td>
       <td>{{ employee.skills }}</td>
       <td>
-        <a><i nz-icon nzType="edit" nzTheme="outline"></i></a>
-        <nz-divider nzType="vertical"></nz-divider>
-        <nz-divider nzType="vertical"></nz-divider>
-        <a><i nz-icon nzType="delete" nzTheme="outline"></i></a>
+        <button
+          nz-button
+          title="Edit"
+          nzType="primary"
+          [nzSize]="size"
+          (click)="editEmployee(employee.id)"
+        >
+          <i nz-icon nzType="edit" nzTheme="outline"></i>
+        </button>
+        <button
+          nz-button
+          title="Delete"
+          nzType="danger"
+          [nzSize]="size"
+          (click)="deleteEmployee(employee.id)"
+        >
+          <i nz-icon nzType="delete" nzTheme="outline"></i>
+        </button>
       </td>
     </tr>
   </tbody>

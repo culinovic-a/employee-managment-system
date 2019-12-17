@@ -17,7 +17,7 @@ export class CreateEmployeeComponent implements OnInit {
   public employeeForm: FormGroup;
 
   constructor(
-    public restApi: EmployeeService,
+    public empService: EmployeeService,
     public router: Router,
     fb: FormBuilder
   ) {
@@ -27,21 +27,13 @@ export class CreateEmployeeComponent implements OnInit {
       date: [null, Validators.required],
       number: [null, Validators.required],
       skills: [null, Validators.required]
-      // name: new FormControl(),
-      // email: new FormControl(),
-      // number: new FormControl(),
-      // skills: new FormControl()
     });
   }
 
   ngOnInit() {}
 
-  // send() {
-  //   console.log(this.employeeForm.value);
-  // }
-
   addEmployee() {
-    this.restApi.createEmployee(this.employeeForm).subscribe((data: {}) => {
+    this.empService.createEmployee(this.employeeForm).subscribe((data: {}) => {
       this.router.navigate(["/employee-list"]);
     });
   }

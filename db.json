@@ -9,14 +9,8 @@
       "name": "ana",
       "email": "ana@mail.com",
       "date": "2019-12-31",
-      "id": 3
-    },
-    {
-      "name": "ana",
-      "email": "aleksandraculinovic@gmail.com",
-      "number": "1234456",
-      "skills": "html, css, js, angular",
-      "id": 4
+      "id": 3,
+      "number": "333333"
     },
     {
       "name": "vladimir",
@@ -31,22 +25,6 @@
       "number": "7894523",
       "skills": "java",
       "id": 9
-    },
-    {
-      "name": "normal name",
-      "email": "aleksandraculinovic@gmail.com",
-      "date": "2019-12-18T17:16:43.990Z",
-      "number": "11111111111111111",
-      "skills": "html, css, js, angular, popovov",
-      "id": 10
-    },
-    {
-      "name": null,
-      "email": null,
-      "date": null,
-      "number": null,
-      "skills": null,
-      "id": 11
     }
   ]
 }
