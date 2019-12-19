@@ -43,15 +43,15 @@ export class EmployeeService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  // updateEmployee(id, employee): Observable<Employee> {
-  //   return this.http
-  //     .put<Employee>(
-  //       this.api + "/employees/" + id,
-  //       JSON.stringify(employee),
-  //       this.httpOptions
-  //     )
-  //     .pipe(retry(1), catchError(this.handleError));
-  // }
+  updateEmployee(id, employee): Observable<Employee> {
+    return this.http
+      .put<Employee>(
+        this.api + "/employees/" + id,
+        JSON.stringify(employee),
+        this.httpOptions
+      )
+      .pipe(retry(1), catchError(this.handleError));
+  }
 
   deleteEmployee(id) {
     return this.http

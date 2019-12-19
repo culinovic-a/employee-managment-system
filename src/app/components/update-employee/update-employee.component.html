@@ -1,4 +1,4 @@
-<form nz-form [formGroup]="updateForm()">
+<form nz-form [formGroup]="updateForm" (ngSubmit)="updateEmployee()">
   <nz-form-item>
     <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="name" nzRequired
       >Name
@@ -68,7 +68,7 @@
 
   <nz-form-item nz-row>
     <nz-form-control [nzSpan]="14" [nzOffset]="6">
-      <button (click)="updateEmployee()" nz-button nzType="primary">
+      <button nz-button nzType="primary">
         Update Employee
       </button>
     </nz-form-control>
