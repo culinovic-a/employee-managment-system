@@ -22,14 +22,13 @@ nz-layout {
     margin: 16px;
   }
 
-  button {
-    background-color: transparent;
-    border: none;
-  }
-
   nz-header {
     background: #fff;
     padding: 0;
+  }
+
+  li:focus {
+    outline: none;
   }
 
   nz-content {

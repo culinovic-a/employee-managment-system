@@ -1,32 +1,29 @@
 <nz-layout>
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
-    <div class="logo">EMS
-    </div>
+    <div class="logo">EMS</div>
     <ul
       nz-menu
       nzTheme="dark"
       nzMode="inline"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-menu-item>
-        <i nz-icon nzType="unordered-list" nzTheme="outline"></i>
-        <button
-          class="btn"
-          routerLinkActive="active"
-          routerLink="/employee-list"
-        >
-          Employee List
-        </button>
+      <li
+        nz-menu-item
+        routerLinkActive="active"
+        routerLink="/employee-list"
+        nzMatchRouter
+      >
+        <i nz-icon nzType="unordered-list"></i>
+        <span>Employee List</span>
       </li>
-      <li nz-menu-item>
-        <i nz-icon nzType="form" nzTheme="outline"></i>
-        <button
-          class="btn"
-          routerLinkActive="active"
-          routerLink="/create-employee"
-        >
-          Create new Employee
-        </button>
+      <li
+        nz-menu-item
+        routerLinkActive="active"
+        routerLink="/create-employee"
+        nzMatchRouter
+      >
+        <i nz-icon nzType="form"></i>
+        <span>Create new Employee</span>
       </li>
     </ul>
   </nz-sider>
