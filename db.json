@@ -9,13 +9,6 @@
       "id": 2
     },
     {
-      "name": "ana",
-      "email": "ana@mail.com",
-      "date": "2019-12-31",
-      "number": "3333332",
-      "id": 3
-    },
-    {
       "name": "aleksandar",
       "email": "fghfhg@djsds",
       "number": "7894523",
@@ -29,6 +22,14 @@
       "number": null,
       "skills": null,
       "id": 10
+    },
+    {
+      "name": "Vladimir",
+      "email": "vlad@mail.com",
+      "date": "2020-03-19T21:38:30.936Z",
+      "number": "123654789",
+      "skills": "nvfevmfovmfklv",
+      "id": 11
     }
   ]
 }

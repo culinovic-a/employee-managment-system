@@ -33,8 +33,10 @@ export class CreateEmployeeComponent implements OnInit {
   ngOnInit() {}
 
   addEmployee() {
-    this.empService.createEmployee(this.employeeForm).subscribe((data: {}) => {
-      this.router.navigate(["/employee-list"]);
-    });
+    this.empService
+      .createEmployee(this.employeeForm.value)
+      .subscribe((data: {}) => {
+        this.router.navigate(["/employee-list"]);
+      });
   }
 }
