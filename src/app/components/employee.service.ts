@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { environment } from "../../environments/environment.prod";
-import { Employee } from "./employee";
+import { Employee } from "./employee.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { retry, catchError } from "rxjs/operators";
 
@@ -29,24 +29,24 @@ export class EmployeeService {
 
   getEmployee(id): Observable<Employee> {
     return this.http
-      .get<Employee>(this.api + "/employees/" + id)
+      .get<Employee>(`${this.api}/employees/${id}`)
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  createEmployee(employee): Observable<Employee> {
+  createEmployee(employee: Employee): Observable<Employee> {
     return this.http
       .post<Employee>(
         this.api + "/employees",
-        JSON.stringify(employee.value),
+        JSON.stringify(employee),
         this.httpOptions
       )
       .pipe(retry(1), catchError(this.handleError));
   }
 
-  updateEmployee(id, employee): Observable<Employee> {
+  updateEmployee(id: string, employee: Employee): Observable<Employee> {
     return this.http
       .put<Employee>(
-        this.api + "/employees/" + id,
+        `${this.api}/employees/${id}`,
         JSON.stringify(employee),
         this.httpOptions
       )
@@ -55,7 +55,7 @@ export class EmployeeService {
 
   deleteEmployee(id) {
     return this.http
-      .delete<Employee>(this.api + "/employees/" + id, this.httpOptions)
+      .delete<Employee>(`${this.api}/employees/${id}`, this.httpOptions)
       .pipe(retry(1), catchError(this.handleError));
   }
 
