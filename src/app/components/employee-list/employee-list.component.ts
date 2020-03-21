@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { EmployeeService } from "../employee.service";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../../services/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-employee-list",
-  templateUrl: "./employee-list.component.html",
-  styleUrls: ["./employee-list.component.scss"]
+  selector: 'app-employee-list',
+  templateUrl: './employee-list.component.html',
+  styleUrls: ['./employee-list.component.scss']
 })
 export class EmployeeListComponent implements OnInit {
   Employees: any = [];
@@ -23,11 +23,11 @@ export class EmployeeListComponent implements OnInit {
   }
 
   editEmployee(id) {
-    this.router.navigate(["/update-employee", id]);
+    this.router.navigate(['/update-employee', id]);
   }
 
   deleteEmployee(id) {
-    if (window.confirm("Are you sure you want to delete this employee?")) {
+    if (window.confirm('Are you sure you want to delete this employee?')) {
       this.service.deleteEmployee(id).subscribe(data => {
         this.loadEmployees();
       });

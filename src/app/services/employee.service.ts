@@ -1,12 +1,12 @@
-import { Injectable } from "@angular/core";
-import { Observable, throwError } from "rxjs";
-import { environment } from "../../environments/environment.prod";
-import { Employee } from "./employee.model";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { retry, catchError } from "rxjs/operators";
+import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { environment } from '../../environments/environment.prod';
+import { Employee } from '../models/employee.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { retry, catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class EmployeeService {
   private readonly api: string;
@@ -17,13 +17,13 @@ export class EmployeeService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      "Content-Type": "application/json"
+      'Content-Type': 'application/json'
     })
   };
 
   getEmployees(): Observable<Employee> {
     return this.http
-      .get<Employee>(this.api + "/employees")
+      .get<Employee>(this.api + '/employees')
       .pipe(retry(1), catchError(this.handleError));
   }
 
@@ -36,7 +36,7 @@ export class EmployeeService {
   createEmployee(employee: Employee): Observable<Employee> {
     return this.http
       .post<Employee>(
-        this.api + "/employees",
+        this.api + '/employees',
         JSON.stringify(employee),
         this.httpOptions
       )
@@ -60,7 +60,7 @@ export class EmployeeService {
   }
 
   handleError(error) {
-    let errorMessage = "";
+    let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
       errorMessage = error.error.message;
     } else {

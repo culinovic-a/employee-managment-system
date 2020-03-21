@@ -1,17 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {
   FormGroup,
   FormControl,
   FormBuilder,
   Validators
-} from "@angular/forms";
-import { EmployeeService } from "../employee.service";
-import { Router } from "@angular/router";
+} from '@angular/forms';
+import { EmployeeService } from '../../services/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-create-employee",
-  templateUrl: "./create-employee.component.html",
-  styleUrls: ["./create-employee.component.scss"]
+  selector: 'app-create-employee',
+  templateUrl: './create-employee.component.html',
+  styleUrls: ['./create-employee.component.scss']
 })
 export class CreateEmployeeComponent implements OnInit {
   public employeeForm: FormGroup;
@@ -36,7 +36,7 @@ export class CreateEmployeeComponent implements OnInit {
     this.empService
       .createEmployee(this.employeeForm.value)
       .subscribe((data: {}) => {
-        this.router.navigate(["/employee-list"]);
+        this.router.navigate(['/employee-list']);
       });
   }
 }
