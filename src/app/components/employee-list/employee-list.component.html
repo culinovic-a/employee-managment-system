@@ -1,4 +1,4 @@
-<nz-table #basicTable [nzData]="Employees">
+<nz-table #basicTable [nzData]="employees">
   <thead>
     <tr>
       <th>Name</th>
@@ -9,10 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of Employees">
+    <tr *ngFor="let employee of employees">
       <td>{{ employee.name }}</td>
       <td>{{ employee.email }}</td>
-      <td>{{ employee.date | date: "mediumDate" }}</td>
+      <td>{{ employee.date | date: 'mediumDate' }}</td>
       <td>{{ employee.number }}</td>
       <td>{{ employee.skills }}</td>
       <td>

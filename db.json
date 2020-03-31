@@ -1,27 +1,12 @@
 {
   "employees": [
     {
-      "name": "Marco",
-      "email": "marco@mail.com",
-      "date": "2019-12-19T19:35:26.441Z",
-      "number": "12345611111",
-      "skills": "html, java, kotlin",
-      "id": 2
-    },
-    {
       "name": "aleksandar",
       "email": "fghfhg@djsds",
+      "date": "2019-09-10T11:58:38.481Z",
       "number": "7894523",
       "skills": "java",
       "id": 9
-    },
-    {
-      "name": "normal name",
-      "email": "fddfd",
-      "date": "2019-12-15T19:42:58.645Z",
-      "number": null,
-      "skills": null,
-      "id": 10
     },
     {
       "name": "Vladimir",

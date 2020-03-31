@@ -21,9 +21,9 @@ export class EmployeeService {
     })
   };
 
-  getEmployees(): Observable<Employee> {
+  getEmployees(): Observable<Employee[]> {
     return this.http
-      .get<Employee>(this.api + '/employees')
+      .get<Employee[]>(this.api + '/employees')
       .pipe(retry(1), catchError(this.handleError));
   }
 
@@ -43,6 +43,11 @@ export class EmployeeService {
       .pipe(retry(1), catchError(this.handleError));
   }
 
+  /**
+   * Update an employee
+   * @param id the ID of employee I want to update
+   * @param employee the object of that employee
+   */
   updateEmployee(id: string, employee: Employee): Observable<Employee> {
     return this.http
       .put<Employee>(

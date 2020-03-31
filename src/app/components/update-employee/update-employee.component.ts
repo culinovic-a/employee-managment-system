@@ -10,7 +10,6 @@ import { EmployeeService } from '../../services/employee.service';
 })
 export class UpdateEmployeeComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
-  employeeData: any = {};
   updateForm: FormGroup;
 
   constructor(
@@ -28,13 +27,12 @@ export class UpdateEmployeeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.service.getEmployee(this.id).subscribe((data: {}) => {
-      this.employeeData = data;
-      this.updateForm.controls['name'].setValue(this.employeeData.name);
-      this.updateForm.controls['email'].setValue(this.employeeData.email);
-      this.updateForm.controls['date'].setValue(this.employeeData.date);
-      this.updateForm.controls['number'].setValue(this.employeeData.number);
-      this.updateForm.controls['skills'].setValue(this.employeeData.skills);
+    this.service.getEmployee(this.id).subscribe(employee => {
+      this.updateForm.controls['name'].setValue(employee.name);
+      this.updateForm.controls['email'].setValue(employee.email);
+      this.updateForm.controls['date'].setValue(employee.date);
+      this.updateForm.controls['number'].setValue(employee.number);
+      this.updateForm.controls['skills'].setValue(employee.skills);
     });
   }
 
